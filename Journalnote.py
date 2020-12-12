@@ -9,7 +9,7 @@ fmt = "%Y-%m-%d-%H"
 
 def musicrun():
     os.system("nvlc IHVMK.mp3")
-    os.system("bg")
+    
     
 
 
@@ -17,6 +17,11 @@ os.system("touch .files")
 start = input("Type s to start a new entry, P to play music, or c to stop.")
 if start == "p" or "p":
     musicrun()
+if start == "R" or "r":
+    os.system("cd Entries")
+    os.system("python3 read.py")
+
+	
 if start == "s" or "S":
     cd = str(now.strftime(fmt)) + ".txt"    
     Code = open( cd, "w")

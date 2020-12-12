@@ -18,7 +18,6 @@ start = input("Type s to start a new entry, P to play music, or c to stop.")
 if start == "p" or "p":
     musicrun()
 if start == "R" or "r":
-    os.system("cd Entries")
     os.system("python3 read.py")
 
 	

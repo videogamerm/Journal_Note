@@ -2,30 +2,29 @@ import datetime
 import os
 
 
-
 now = datetime.datetime.now()
 fmt = "%Y-%m-%d-%H"
 
 
-def musicrun():
-    os.system("nvlc IHVMK.mp3")
-    
-    
+def readr():
+    os.system("ls")
+    File = input("Choose your file from the list above ")
+    text = open( File, "r")
+    print(text.read())
 
 
-os.system("touch .files")
-start = input("Type s to start a new entry, P to play music, or c to stop.")
-if start == "p" or "p":
-    musicrun()
-if start == "R" or "r":
-    os.system("python3 read.py")
+start = input("Type s to start a new entry, r to read, or c to stop.")
+
+
 
 	
-if start == "s" or "S":
+if start == "s" :
     cd = str(now.strftime(fmt)) + ".txt"    
     Code = open( cd, "w")
     Entry = input("Type  your Journal Entry. ")
     Code.write (str(Entry))
     Code.close()
-if start == "c" or "C":
+if start == "r":
+    readr()
+if start == "c":
     exit()

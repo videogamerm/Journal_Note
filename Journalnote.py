@@ -28,21 +28,22 @@ def readp():
 
     mixer.music.play() 
 
-start = input("Type s to start a new entry, r to read,p to play music(mp3 only), or c to stop.")
+while True:
+    start = input("Type s to start a new entry, r to read,p to play music(mp3 only), or c to stop.")
 
 
 
 
-if start == "s" :
-    cd = str(now.strftime(fmt)) + ".txt"    
-    Code = open( cd, "w")
-    Entry = input("Type  your Journal Entry. ")
-    Code.write (str(Entry))
-    Code.close()
-if start == "r":
-    readr()
-if start == "p":
-    readp()
+    if start == "s" :
+        cd = str(now.strftime(fmt)) + ".txt"    
+        Code = open( cd, "w")
+        Entry = input("Type  your Journal Entry. ")
+        Code.write (str(Entry))
+        Code.close()
+    if start == "r":
+        readr()
+    if start == "p":
+        readp()
     
-if start == "c":
-    exit()
+    if start == "c":
+        exit()

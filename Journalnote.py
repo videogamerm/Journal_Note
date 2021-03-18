@@ -4,7 +4,7 @@ from pygame import mixer
 import time
 
 
-os.system("ruby loading.rb")
+os.system("python3 loading.py")
 
 
 now = datetime.datetime.now()
@@ -12,14 +12,14 @@ fmt = "%Y-%m-%d-%H"
 
 
 def readr():
-    os.system("ls *.txt")
+    os.system("ls notes/*.txt")
     File = input("Type your file from the list above ")
     text = open( File, "r")
     print(text.read())
 def readp():
     
     os.system("ls *.mp3")
-    song = input("Type song name(+Remember only mp3 so far")
+    song = input("Type song name(Remember only mp3 so far")
     mixer.init() 
 
     mixer.music.load(song) 
@@ -35,9 +35,10 @@ while True:
 
 
     if start == "s" :
-        cd = str(now.strftime(fmt)) + ".txt"    
-        Code = open( cd, "w")
-        Entry = input("Type  your Journal Entry. ")
+        name = input("name")
+        os.system("cd notes&&touch "+ name)
+        Code = open( "notes/" + name, "w")
+        Entry = input("Type  your Entry. ")
         Code.write (str(Entry))
         Code.close()
     if start == "r":
@@ -46,4 +47,4 @@ while True:
         readp()
     
     if start == "c":
-        exit()
+        exit("You Quit!")

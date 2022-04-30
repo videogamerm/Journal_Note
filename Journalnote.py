@@ -10,8 +10,7 @@ import os
 from pygame import mixer 
 import time
 
-
-os.system("python3 loading.py")
+import loading.py
 
 
 now = datetime.datetime.now()
